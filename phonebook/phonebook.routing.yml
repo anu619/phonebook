@@ -1,0 +1,7 @@
+phonebook.add:
+  path: 'phonebook/add'
+  defaults:
+    _form: 'Drupal\phonebook\Form\PhonebookAddForm'
+    _title: 'Create Phonebook'
+  requirements:
+    _permission: 'access content'

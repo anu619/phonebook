@@ -1,0 +1,46 @@
+<?php
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ */
+function phonebook_schema(){
+    $schema['phonebook'] = array(
+        'description' => 'The table for storing the user phonebook information',
+        'fields' => array(
+            'phonebook_id' => array(
+                'description' => 'Primary identifier for User data',
+                'type' => 'serial',
+                'not null' => TRUE,
+                'unsigned' => TRUE,
+            ),
+            'user_id' => array(
+                'description' => 'Logged User details',
+                'type' => 'int',
+                'not null' => TRUE,
+                'unsigned' => TRUE,
+            ),
+           'name' => array(
+                'description' => 'Phonebook User Name.',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'email' => array(
+                'description' => 'Phonebook User Email ID',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ),
+            'number' => array(
+                'description' => 'Phonebook User Phonenumber',
+                'type' => 'varchar',
+                'length' => 100,
+                'not null' => TRUE,
+            ),            
+        ),
+        'primary key' => array('phonebook_id'),
+    );
+    return $schema;
+}
