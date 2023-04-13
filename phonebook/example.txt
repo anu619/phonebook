@@ -1,1 +1,2 @@
 This is the example text file.
+new line
